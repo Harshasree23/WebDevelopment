@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="NavBar1.css">
+    <link rel="stylesheet" href="NavBar2.css">
+    <title>NavBars</title>
+</head>
+<body>
+    <h1> Nav bar with a Drop down List ( Css to make drop-down ) </h1>
+    <div class="nav-container-1">
+        <ul>
+            <li>  <a href="">Home</a>  </li>
+            <li class="drop-list-parent">  <a href="">About</a>  
+                <ul class="drop-list">
+                    <li>hi</li>
+                    <li>this</li>
+                    <li>is</li>
+                    <li>a</li>
+                    <li>drop down</li>
+                </ul>
+            </li>
+            <li>  <a href="">Contact</a>  </li>
+            <li>  <a href="">Theme</a>  </li>
+        </ul>
+        <a href="#" class="signin" >Sign In</a>    
+    </div>
+    <h1> Nav bar with a Drop down List ( select and js  - not recommended ) </h1>
+    <div class="nav-container-2 ">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li>
+                <select  onchange="window.location.href=this.value;">
+                    <option value="" selected disabled>Branch </option>
+                    <option value="#">CSE </option>
+                    <option value="#">ECE </option>
+                    <option value="#">CIV </option>
+                    <option value="#">MEC </option>
+                    <option value="#">ARC </option>
+                </select>
+            </li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Theme</a></li>
+        </ul>
+    </div>
+    <div class="nav-container">
+
+    </div>
+    <div class="nav-container">
+
+    </div>
+    <div class="nav-container">
+
+    </div>
+</body>
+</html>

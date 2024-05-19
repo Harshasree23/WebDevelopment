@@ -1,0 +1,26 @@
+.nav-container-2{
+    min-height: 100vh;
+}
+.nav-container-2 ul{
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.nav-container-2 select {
+    border: none;
+    padding: .6rem;
+    cursor: pointer;
+}
+
+select option{
+    padding: 8px 12px;
+}
+
+select option:hover {
+    background-color: gray;
+    color: white;
+}
