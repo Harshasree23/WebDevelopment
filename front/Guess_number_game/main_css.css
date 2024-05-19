@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+}
+
+.game-container{
+    width: 80%;
+    padding: 1rem;
+    margin: 10rem auto;
+    border: .1rem solid black;
+    display: flex;
+    gap: 3rem;
+    flex-direction: column ;
+    align-items: center;
+}
+
+.heading{
+    font-size: 3.5rem;
+    border-bottom: .2rem solid rgb(126, 120, 120);
+    font-weight: lighter;
+}
+
+.game{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.interact{
+    display: flex;
+    align-items: baseline;
+    gap:1rem;
+    padding: 0;
+}
+
+.interact fieldset{
+    border-radius: .2rem;
+    flex: 1;
+}
+
+.blur{
+    display: none;
+}
+
+.display{
+    display: block;
+}
+  
+.interact input{
+    padding: 0.6rem;
+    border: none;
+}
+
+.interact input:focus{
+    outline:none;
+}
+
+.interact button{
+    height: fit-content;
+    padding: .7rem;
+}
+
+#info , #moves{
+    font-size: 2rem;
+}
+
+.green{
+    color: greenyellow;
+}
+
+.red{
+    color: red;
+}

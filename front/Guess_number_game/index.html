@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Stylesheet" href="main_css.css">
+    <title>Guess ME</title>
+</head>
+<body>
+    <div class="game-container">
+        <div class="heading">
+            Guess the number game ( 1 to 100 )
+        </div>
+        <div class="game">
+            <div class="interact">
+                <fieldset>
+                    <legend>Enter the number</legend>
+                    <input type="text" id="num-input" placeholder="Guess number ...">
+                </fieldset>
+                <button onclick="check()" >Enter</button>
+            </div>
+            <div class="info-container">
+                <p id="info"> Guess correct number with in 10 moves to win !!!! </p>
+                <p id="moves">Moves : 0</p>
+            </div>
+        </div>
+    </div>
+    <script src="main_js.js" defer></script> 
+</body>
+</html>
