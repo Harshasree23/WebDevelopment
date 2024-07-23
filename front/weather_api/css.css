@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+
+.form{
+    background-color: rgb(235, 235, 235);
+    padding: .5rem;
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+#search-input{
+    max-width: 20rem;
+    font-size: larger;
+    padding: .5rem;
+}
+
+#search-button{
+    width: 5rem;
+    padding: .5rem;
+    margin: auto;
+    font-size: larger;
+    border: none;
+    box-shadow: .2rem .2rem 1.5rem rgb(167, 167, 167);
+}
+
+#search-button:hover{
+    background-color: aliceblue;
+    box-shadow: .2rem .2rem 1.5rem rgb(124, 124, 124);
+}
+
+.info{
+    border: .1rem solid ;
+    width: calc(80vw + 1.5rem);
+    margin: 1rem auto;
+    padding: 1rem;
+    font-size: large;
+    display: grid;
+    gap: 1rem;
+}
+
+

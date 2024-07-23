@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css.css">
+    <title>Tic-Tac-Toe </title>
+</head>
+<body>
+
+    <header>
+        <div class="heading">
+            <svg>
+                <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+                    Tic-Tac-Toe
+                </text>
+            </svg>
+        </div>
+        <div class="theme">
+            <button id="theme" >Theme</button>
+        </div>
+    </header>
+    <main>
+        <div class="game-container">
+            <div class="grids-container">
+                <button class="grid" id="0" onclick="play(this)" ></button>
+                <button class="grid" id="1" onclick="play(this)" ></button>
+                <button class="grid" id="2" onclick="play(this)" ></button>
+                <button class="grid" id="3" onclick="play(this)" ></button>
+                <button class="grid" id="4" onclick="play(this)" ></button>
+                <button class="grid" id="5" onclick="play(this)" ></button>
+                <button class="grid" id="6" onclick="play(this)" ></button>
+                <button class="grid" id="7" onclick="play(this)" ></button>
+                <button class="grid" id="8" onclick="play(this)" ></button>
+            </div>
+            <div class="buttons">
+                <div id="info"></div>
+                <div id="player-info">Player X</div>
+                <button id="restart" >restart</button>
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="script.js" defer> </script>
+</body>
+</html>
