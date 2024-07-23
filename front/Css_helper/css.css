@@ -29,7 +29,7 @@ header{
 
 .exp-div{
     border: .1rem solid black;
-    min-height: 5rem;
-    min-width: 5rem;
+    min-height: 30%;
+    min-width: 15%;
     background-color: rgba(255, 9, 9, 0.479);
 }
