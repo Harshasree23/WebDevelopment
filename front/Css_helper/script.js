@@ -1,4 +1,4 @@
-const place = document.getElementById('flex-rules');
+const place = document.getElementById('display');
 
 
 // createContainer() is a function which takes 4 parameters
@@ -43,7 +43,6 @@ const createContainer = (message,attributes,values,n) =>{
 
 
     // appending back to parent 
-    console.log( output_container.style.alignContent );
     place.appendChild(container_div);
     return container_div;
 }
@@ -127,7 +126,7 @@ const flex_properties = () =>
     // for align content
     for(let x of align_content)
     {
-        createContainer( `dispaly:flex \n align-content:${x} \n flex-wrap:wrap` , ['display','alignContent','flexWrap'] , ['flex',x,'wrap'] , 3);
+        createContainer( `display:flex \n align-content:${x} \n flex-wrap:wrap` , ['display','alignContent','flexWrap'] , ['flex',x,'wrap'] , 3);
     }
 
     //for flex wrap

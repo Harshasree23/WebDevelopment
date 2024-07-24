@@ -3,7 +3,24 @@
 }
 
 header{
-    font-size: 6rem;
+    font-size: 4rem;
+    border-bottom: .2rem solid;
+}
+
+article{
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    border: .2rem solid black;
+    margin: 1rem;
+    padding: 1rem;
+    min-width: 10vh;
+}
+
+main{
+    padding: 1rem;
 }
 
 .container{
