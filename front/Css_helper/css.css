@@ -44,11 +44,12 @@ main{
 
 .container{
     border: .2rem solid black;
+    width: 90%;
     min-height: 15rem;
     display: grid;
     grid-template-columns: 40% auto;
     gap: 1rem;
-    margin: .5rem 0rem;
+    margin: .5rem auto;
 }
 
 .code{
