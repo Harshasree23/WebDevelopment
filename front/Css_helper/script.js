@@ -102,7 +102,9 @@ const create_subdivs = (heading,arr) =>
      const h1 = document.createElement("h1");
      h1.innerText=heading;
  
-     sub_div.appendChild(h1);
+     sub_heading.appendChild(h1);
+
+     sub_div.appendChild(sub_heading);
  
      for(let x of arr)
      {

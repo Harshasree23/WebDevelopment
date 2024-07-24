@@ -1,9 +1,11 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 header{
-    font-size: 4rem;
+    font-size: 3rem;
     border-bottom: .2rem solid;
 }
 
@@ -13,24 +15,40 @@ article{
 }
 
 nav{
-    border: .2rem solid black;
-    margin: 1rem;
-    padding: 1rem;
-    min-width: 10vh;
+    min-height: 10vh;
+    width: 100%;
+    padding: .5rem;
 }
 
+nav ul{
+    list-style: none;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li{
+    padding: .5rem;
+    width: 100%;
+    text-align: center;
+}
+
+nav ul li:hover {
+    border-bottom: .2rem solid orange;
+    transition: .3s ease-out;
+}  
+
 main{
-    padding: 1rem;
+    width: 100%;
 }
 
 .container{
     border: .2rem solid black;
     min-height: 15rem;
-    margin: 1rem;
-    padding: 1rem;
     display: grid;
     grid-template-columns: 40% auto;
     gap: 1rem;
+    margin: .5rem 0rem;
 }
 
 .code{
@@ -48,5 +66,20 @@ main{
     border: .1rem solid black;
     min-height: 30%;
     min-width: 15%;
-    background-color: rgba(255, 9, 9, 0.479);
+    background-color: rgba(255, 148, 9, 0.479);
+}
+
+
+.main-heading{
+    font-size: 2rem;
+    font-weight: lighter;
+    background-color: orange;
+    padding: .5em 1rem;
+}
+
+.sub-heading{
+    font-size: 1.5rem;
+    font-weight: lighter;
+    padding: .5em 1rem;
+    background-color: rgba(229, 255, 0, 0.808);
 }
