@@ -54,6 +54,7 @@ main{
 .buttons-container{
     min-height: 4rem;
     width: 100%;
+    margin: 1rem auto;
     padding: 1rem;
 }
 
@@ -63,21 +64,27 @@ table{
 }
 
 #test{
-    border: .2rem solid orange;
+    border: .2rem solid #ffa500;
     height: 80%;
     width: 85%;
 }
 
-input[type="text"]{
-    border: none;
+input[type="text"],input[type="number"]{
     padding: .4rem;
     width: 5rem;
 }
 
-input[type="text"]:focus {
-    border: transparent;
+#border-table td{
+    margin: .5rem auto;
+    padding: .3rem;
+    min-width: 15vw;
 }
 
+#border-table tr{
+    display: flex;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
 
 @media (max-width:500px) {
     .display{
@@ -88,5 +95,14 @@ input[type="text"]:focus {
         min-height: 10rem;
         min-width: auto;
         margin: 1rem;
+    }
+    #border-table tr{
+        border: .1rem solid #ffa500;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 0rem;
     }
 }
