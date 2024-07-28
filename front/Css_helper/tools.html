@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="tools_css.css">
+  <title>Tools</title>
+</head>
+<body>
+  <header>
+    <h1>Tools</h1>
+  </header>
+  <nav>
+
+  </nav>
+  <main>
+    <div class="display">
+      <div class="main-container">
+        <div id="test">
+
+        </div>
+      </div>
+      <div class="code-container">
+        <p>Code : </p>
+        <code id="code">
+
+        </code>
+      </div>
+    </div>
+   
+    <div class="options">
+        <h1>Border Radius</h1>
+        <div class="buttons-container">
+            <table>
+               <tr>
+                   <td> <label for="top-left">Top Left</label> </td>
+                   <td> <input type="range" id="top-left" min="0" max="100" value="0" oninput="handleRadius(this)"> </td>
+                   <td> <input type="text" id="top-left-text" value="0"> </td>
+               </tr>
+               <tr>
+                   <td> <label for="top-right">Top Right</label> </td>
+                   <td> <input type="range" id="top-right" min="0" max="100" value="0" oninput="handleRadius(this)"> </td>
+                   <td> <input type="text" id="top-right-text" value="0"> </td>
+       
+               </tr>
+               <tr>
+                   <td> <label for="bottom-left">Bottom Left</label> </td>
+                   <td> <input type="range" id="bottom-left" min="0" max="100" value="0" oninput="handleRadius(this)"></td>
+                   <td> <input type="text" id="bottom-left-text" value="0"> </td>
+                   
+               </tr>
+               <tr>
+                   <td> <label for="bottom-right">Bottom Right</label> </td>
+                   <td> <input type="range" id="bottom-right" min="0" max="100" value="0" oninput="handleRadius(this)"> </td>
+                   <td> <input type="text" id="bottom-right-text" value="0"> </td>
+               </tr>
+           </table>
+        </div>
+
+        <div class="options">
+            <h1>Border Radius</h1>
+            <div class="buttons-container">
+                <table>
+                   <tr>
+                       <td> <label for="top-left">Top Left</label> </td>
+                       <td> <input type="range" id="top-left" min="0" max="100" value="0" oninput="handleRadius(this)"> </td>
+                       <td> <input type="text" id="top-left-text" value="0"> </td>
+                   </tr>
+                   <tr>
+                       <td> <label for="top-right">Top Right</label> </td>
+                       <td> <input type="range" id="top-right" min="0" max="100" value="0" oninput="handleRadius(this)"> </td>
+                       <td> <input type="text" id="top-right-text" value="0"> </td>
+           
+                   </tr>
+                   <tr>
+                       <td> <label for="bottom-left">Bottom Left</label> </td>
+                       <td> <input type="range" id="bottom-left" min="0" max="100" value="0" oninput="handleRadius(this)"></td>
+                       <td> <input type="text" id="bottom-left-text" value="0"> </td>
+                       
+                   </tr>
+                   <tr>
+                       <td> <label for="bottom-right">Bottom Right</label> </td>
+                       <td> <input type="range" id="bottom-right" min="0" max="100" value="0" oninput="handleRadius(this)"> </td>
+                       <td> <input type="text" id="bottom-right-text" value="0"> </td>
+                   </tr>
+               </table>
+            </div>
+
+    </div>
+  </main>
+  <script src="./js_files/script2.js" defer></script>
+</body>
+</html>
