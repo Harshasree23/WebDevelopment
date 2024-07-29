@@ -1,10 +1,11 @@
 // imports
-import { handleInputText,handleRadius } from "./borderRadius.js";
+import { handleInputText,handleRadius,createRadius } from "./borderRadius.js";
 import { createBorder,handleBorder } from "./borderBasic.js";
 
 // target div and target code element for entire code
 const testDiv = document.getElementById('test');
 const codeText = document.getElementById('code');
+
 
 //  to get the code inside the code div 
 const updatecode = () =>{
@@ -19,6 +20,11 @@ const updatecode = () =>{
 // BORDER-RADIUS
 // 
 
+
+createRadius('top-left');
+createRadius('top-right');
+createRadius('bottom-right');
+createRadius('bottom-left');
 // border - range input
 let border_divs = document.getElementsByClassName('border-radius');
 for(let x of border_divs)
@@ -59,3 +65,5 @@ for(let x of border_divs)
       updatecode();
     } );
 }
+
+updatecode();
