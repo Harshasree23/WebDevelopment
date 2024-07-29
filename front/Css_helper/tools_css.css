@@ -24,9 +24,9 @@ main{
     background-color: rgba(255, 255, 255, 0.911);
     box-shadow: 1rem 1rem 1rem rgba(177, 176, 176, 0.705)
                 ,0rem 0rem .33rem rgba(177, 176, 176, 0.705);
-    padding: 1rem;
+    padding: 3rem 1rem 3rem 1rem;
     width: 100%;
-    min-height: 15rem;
+    min-height: 20rem;
     grid-template-columns: 55% 45%;
 }
  
