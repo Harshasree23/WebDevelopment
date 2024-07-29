@@ -17,7 +17,7 @@ const handleRadius = (slider) =>
   document.getElementById(sliderId + '-text').value = sliderValue;
 
   // Construct the border-radius style string
-  const radiusStyle = `${topLeft.value}% ${topRight.value}% ${bottomRight.value}% ${bottomLeft.value}%`;
+  const radiusStyle = `${topLeft.value}rem ${topRight.value}rem ${bottomRight.value}rem ${bottomLeft.value}rem`;
 
   // Apply the border-radius style to the testDiv
   testDiv.style.borderRadius = radiusStyle;
@@ -27,6 +27,7 @@ const handleRadius = (slider) =>
 
 //  to get the code inside the code div 
 const updatecode = () =>{
+    console.log(testDiv.style.border,testDiv.style.borderLeft);
     codeText.innerText = `border-radius : ${testDiv.style.borderRadius} ;\n `;
     codeText.innerText += `border-top : ${testDiv.style.borderTop} ;\n`;
     codeText.innerText += `border-left : ${testDiv.style.borderLeft} ;\n`;
@@ -39,7 +40,7 @@ const updatecode = () =>{
 const handleInputText = (text) => {
   const sliderId = text.id.replace("-text","");
   document.getElementById(sliderId).value = text.value;
-  const radiusStyle = `${topLeft.value}% ${topRight.value}% ${bottomRight.value}% ${bottomLeft.value}%`;
+  const radiusStyle = `${topLeft.value}rem ${topRight.value}rem ${bottomRight.value}rem ${bottomLeft.value}rem`;
 
   // Apply the border-radius style to the testDiv
   testDiv.style.borderRadius = radiusStyle;
@@ -59,16 +60,14 @@ const borderTable = document.getElementById('border-table');
 // function for borders
 const createBorder = (label) => {
   const html = `<tr>
-    <td><h3>${label}</h3></td>
+    <td><p>${label}</p></td>
     <td>
-      <label for="${label}-border">Border</label>
       <select id="${label}-border" onchange="handleBorder(this)">
         <option value="none">No</option>
         <option value="solid" selected>Yes</option>
       </select>
     </td>
     <td>
-      <label for="${label}-type">Type</label>
       <select id="${label}-type" onchange="handleBorder(this)">
         <option value="solid" selected>Solid</option>
         <option value="dotted">Dotted</option>
@@ -84,11 +83,9 @@ const createBorder = (label) => {
         </select>
     </td>
     <td>
-      <label for="${label}-width">Width (rem)</label>
-      <input type="number" id="${label}-width" value="0.2" oninput="handleBorder(this)">
+      <input type="number" id="${label}-width" value="0.2" step='.1' oninput="handleBorder(this)">
     </td>
     <td>
-      <label for="${label}-color">Color</label>
       <input type="color" id="${label}-color" oninput="handleBorder(this)" value='#ffa550'>
     </td>
   </tr>`;

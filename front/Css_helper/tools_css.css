@@ -19,15 +19,22 @@ main{
 
 .display{
     display: grid;
+    position: sticky;
+    top: 1rem;
+    background-color: rgba(255, 255, 255, 0.911);
+    box-shadow: 1rem 1rem 1rem rgba(177, 176, 176, 0.705)
+                ,0rem 0rem .33rem rgba(177, 176, 176, 0.705);
+    padding: 1rem;
     width: 100%;
     min-height: 15rem;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 55% 45%;
 }
  
 .main-container{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgb(255, 255, 255);
 }
 
 .code-container{
@@ -51,11 +58,14 @@ main{
     width: 90%;
 }
 
+.options h1{
+    border-bottom: .1rem solid;
+    margin-bottom: 1rem;
+}
+
 .buttons-container{
     min-height: 4rem;
     width: 100%;
-    margin: 1rem auto;
-    padding: 1rem;
 }
 
 table{
@@ -74,6 +84,10 @@ input[type="text"],input[type="number"]{
     width: 5rem;
 }
 
+#border-table{
+    margin: 0rem auto;
+}
+
 #border-table td{
     margin: .5rem auto;
     padding: .3rem;
@@ -81,11 +95,14 @@ input[type="text"],input[type="number"]{
 }
 
 #border-table tr{
-    display: flex;
-    padding: 1rem;
-    flex-wrap: wrap;
+    padding: .3rem;
 }
 
+
+
+
+
+/* Responsive design */
 @media (max-width:500px) {
     .display{
         display: flex;
@@ -95,14 +112,5 @@ input[type="text"],input[type="number"]{
         min-height: 10rem;
         min-width: auto;
         margin: 1rem;
-    }
-    #border-table tr{
-        border: .1rem solid #ffa500;
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        gap: 0rem;
     }
 }
