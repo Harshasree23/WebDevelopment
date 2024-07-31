@@ -19,7 +19,7 @@ export const createRadius = (label) => {
     let html = 
     `<tr>
         <td> <label for="${label}">${label}</label> </td>
-        <td> <input type="range" id="${label}" min="0" max="100" value="0" class="border-radius"> </td>
+        <td> <input type="range" id="${label}" min="0" max="10" value="0" class="border-radius"> </td>
         <td> <input type="text" id="${label+'-text'}" class="border-radius-text" value="0" autocomplete="off" > </td>
     </tr>`;
     table.innerHTML += html;
