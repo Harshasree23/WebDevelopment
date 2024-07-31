@@ -25,7 +25,9 @@ main{
     box-shadow: 1rem 1rem 1rem rgba(177, 176, 176, 0.705)
                 ,0rem 0rem .33rem rgba(177, 176, 176, 0.705);
     padding: 3rem 1rem 3rem 1rem;
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
     min-height: 20rem;
     grid-template-columns: 55% 45%;
 }
@@ -56,6 +58,7 @@ main{
 
 .options{
     width: 90%;
+    margin: 0rem auto;
 }
 
 .options h1{

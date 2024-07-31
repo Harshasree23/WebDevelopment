@@ -5,8 +5,9 @@
 }
 
 header{
-    font-size: 3rem;
-    border-bottom: .2rem solid;
+    font-size: 4rem;
+    box-shadow: 0rem 0rem 1rem rgba(177, 176, 176, 0.705)
+                ,0rem 0rem .3rem rgba(177, 176, 176, 0.705);
 }
 
 article{
@@ -15,9 +16,7 @@ article{
 }
 
 nav{
-    min-height: 10vh;
     width: 100%;
-    padding: .5rem;
 }
 
 nav ul{
@@ -25,12 +24,14 @@ nav ul{
     font-size: 1rem;
     display: flex;
     justify-content: space-around;
+    
 }
 
 nav ul li{
-    padding: .5rem;
+    padding: 1.5rem;
     width: 100%;
     text-align: center;
+    border-bottom: .2rem solid transparent;
 }
 
 nav ul li:hover {
@@ -43,13 +44,12 @@ main{
 }
 
 .container{
-    border: .2rem solid black;
     width: 90%;
     min-height: 15rem;
     display: grid;
     grid-template-columns: 40% auto;
     gap: 1rem;
-    margin: .5rem auto;
+    margin: 1rem auto;
 }
 
 .code{
@@ -67,14 +67,14 @@ main{
     border: .1rem solid black;
     min-height: 30%;
     min-width: 15%;
-    background-color: rgba(255, 148, 9, 0.479);
+    background-color: rgba(255, 170, 0, 0.479);
 }
 
 
 .main-heading{
     font-size: 2rem;
     font-weight: lighter;
-    background-color: orange;
+    background-color: rgb(252, 249, 249);
     padding: .5em 1rem;
 }
 
@@ -82,5 +82,5 @@ main{
     font-size: 1.5rem;
     font-weight: lighter;
     padding: .5em 1rem;
-    background-color: rgba(229, 255, 0, 0.808);
+    background-color: rgba(251, 255, 211, 0.808);
 }
