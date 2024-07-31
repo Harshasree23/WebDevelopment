@@ -4,7 +4,7 @@
     padding: 0;
 }
 
-header{
+/* header{
     border-bottom: .2rem solid black;
     padding: 1rem;
 }
@@ -15,7 +15,7 @@ main{
     align-items: center;
     gap: 2rem;
     margin: 2rem 1rem;
-}
+} */
 
 .display{
     display: grid;

@@ -56,6 +56,6 @@ export const flex_properties = () =>
         arr.push(createContainer(`display:flex \n flex-wrap:${x} `, ['display','flexWrap'] , ['flex',x] , 15,true));
     divs.push( create_subdivs("flex-wrap",arr) );
 
-    display_containers(heading,divs);
+    return {heading,divs};
 }
 

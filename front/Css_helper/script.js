@@ -1,5 +1,6 @@
 import { flex_properties } from "./js_files/flex.js";
-
+import { optionCreation } from "./js_files/tools.js";
+import { setListeners } from "./js_files/listners.js";
 
 // where the output should be displayed
 const place = document.getElementById('display');
@@ -122,4 +123,18 @@ export const create_subdivs = (heading,arr) =>
 
 // calling functions
 
-flex_properties();
+const flexContent = flex_properties();
+const toolsContent = optionCreation();
+
+const navTools = document.getElementById('nav-tools');
+navTools.addEventListener('click',() => {
+    place.innerHTML = '';
+    place.innerHTML = toolsContent;
+    setListeners();
+});
+
+const navLayouts = document.getElementById('nav-layouts');
+navLayouts.addEventListener( 'click' , ()=>{
+    place.innerHTML = '';
+    display_containers(flexContent.heading,flexContent.divs);
+} );
