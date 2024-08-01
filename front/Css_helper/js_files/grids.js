@@ -55,7 +55,7 @@ export const grid_properties = () => {
     const justify_content = ["start", "end", "center", "stretch", "space-between", "space-around"];
     arr = [];
     for (let x of justify_content) {
-        arr.push(createContainer(`display: grid;\n justify-content: ${x};`, ["display", "justifyContent","minHeight","minWidth"], ["grid", x,"1rem","1rem"], 4, false));
+        arr.push(createContainer(`display: grid;\n justify-content: ${x};`, ["display", "justifyContent"], ["grid", x], 4, true));
     }
     divs.push(create_subdivs("justify-content", arr));
 
@@ -64,7 +64,7 @@ export const grid_properties = () => {
     const align_content = ["start", "end", "center", "stretch", "space-between", "space-around"];
     arr = [];
     for (let x of align_content) {
-        arr.push(createContainer(`display: grid;\n align-content: ${x};`, ["display", "alignContent"], ["grid", x], 4, false));
+        arr.push(createContainer(`display: grid;\n align-content: ${x};`, ["display", "alignContent"], ["grid", x], 4, true));
     }
     divs.push(create_subdivs("align-content", arr));
 

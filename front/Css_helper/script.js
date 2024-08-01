@@ -75,7 +75,7 @@ export const display_containers = (heading , divs) =>
     const title = document.createElement('div');
     title.classList.add('main-heading');
 
-    const h1 = document.createElement('h1');
+    const h1 = document.createElement('p');
     h1.innerText = heading;
 
     title.appendChild(h1);
@@ -104,7 +104,7 @@ export const create_subdivs = (heading,arr) =>
      const sub_heading  = document.createElement('div');
      sub_heading.classList.add("sub-heading");
      
-     const h1 = document.createElement("h1");
+     const h1 = document.createElement("p");
      h1.innerText=heading;
  
      sub_heading.appendChild(h1);

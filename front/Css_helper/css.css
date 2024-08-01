@@ -39,7 +39,7 @@ summary::after {
     content: '';
     width: 0; 
     height: 0; 
-    border-top: 10px solid #d9ff00;
+    border-top: 10px solid #747c02;
     border-inline: 7px solid transparent;
     transition: 0.3s;
 }
@@ -51,7 +51,7 @@ details[open] > summary::after {
 nav ul li{
     padding: .5rem;
     width: 100%;
-    text-align: center;
+    text-align: left;
     border-bottom: .2rem solid transparent;
 }
 
@@ -87,6 +87,7 @@ main{
     border: .1rem solid black;
     min-height: 30%;
     min-width: 15%;
+    padding: .3rem;
     background-color: rgba(255, 170, 0, 0.479);
 }
 
