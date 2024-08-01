@@ -128,7 +128,7 @@ const flexContent = flex_properties();
 const toolsContent = optionCreation();
 const gridContent = grid_properties();
 
-const navTools = document.getElementById('nav-tools');
+const navTools = document.getElementById('nav-tools-border');
 navTools.addEventListener('click',() => {
     place.innerHTML = '';
     place.innerHTML = toolsContent;

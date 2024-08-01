@@ -11,7 +11,7 @@ header{
                 ,0rem 0rem .3rem rgba(177, 176, 176, 0.705);
     display: grid;
     grid-template-columns: 20% 80%;
-    align-items: center;
+    align-items: end;
     margin-bottom: 2rem;
 }
 
@@ -24,28 +24,7 @@ nav ul{
     list-style: none;
     font-size: 1rem;
     display: flex;
-    justify-content: space-around;  
-}
-
-summary{
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-summary::after {
-    content: '';
-    width: 0; 
-    height: 0; 
-    border-top: 10px solid #747c02;
-    border-inline: 7px solid transparent;
-    transition: 0.3s;
-}
-
-details[open] > summary::after {
-    transform: rotate(180deg);
+    justify-content: end;  
 }
 
 nav ul li{
@@ -55,9 +34,40 @@ nav ul li{
     border-bottom: .2rem solid transparent;
 }
 
+li{
+    min-width: 3rem;
+    min-height: 1.5rem;
+}
+
 nav ul li:hover {
     border-bottom: .2rem solid orange;
 }  
+
+#layouts,#tools{
+    position: relative;
+}
+
+#nav-layout-options, #nav-tools-options{
+    background-color: aliceblue;
+    position: absolute;
+    top: 2.45rem;
+    padding: 1rem;
+    display:none;
+}
+
+#layouts:hover #nav-layout-options , #tools:hover #nav-tools-options{
+    display: block;
+}
+
+#nav-layout-options ul{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+}
+
+#nav-layout-options ul li{
+    text-align: center;
+}
 
 main{
     width: 100%;
