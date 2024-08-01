@@ -1,6 +1,7 @@
 import { flex_properties } from "./js_files/flex.js";
 import { optionCreation } from "./js_files/tools.js";
 import { setListeners } from "./js_files/listners.js";
+import { grid_properties } from "./js_files/grids.js";
 
 // where the output should be displayed
 const place = document.getElementById('display');
@@ -125,6 +126,7 @@ export const create_subdivs = (heading,arr) =>
 
 const flexContent = flex_properties();
 const toolsContent = optionCreation();
+const gridContent = grid_properties();
 
 const navTools = document.getElementById('nav-tools');
 navTools.addEventListener('click',() => {
@@ -133,8 +135,14 @@ navTools.addEventListener('click',() => {
     setListeners();
 });
 
-const navLayouts = document.getElementById('nav-layouts');
+const navLayouts = document.getElementById('nav-flex');
 navLayouts.addEventListener( 'click' , ()=>{
     place.innerHTML = '';
     display_containers(flexContent.heading,flexContent.divs);
+} );
+
+const navGrid = document.getElementById('nav-grid');
+navGrid.addEventListener( 'click' , ()=>{
+    place.innerHTML = '';
+    display_containers(gridContent.heading,gridContent.divs);
 } );

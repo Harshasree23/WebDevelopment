@@ -1,4 +1,4 @@
-import { createContainer , create_subdivs ,display_containers } from "../script.js";
+import { createContainer , create_subdivs } from "../script.js";
 
 export const flex_properties = () =>
 {
