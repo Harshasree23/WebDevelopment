@@ -1,7 +1,9 @@
 import { flex_properties } from "./js_files/flex.js";
-import { optionCreation } from "./js_files/tools.js";
+import { optionCreation } from "./js_files/Bordertools.js";
 import { setListeners } from "./js_files/listners.js";
 import { grid_properties } from "./js_files/grids.js";
+import { createShadowTools } from "./js_files/ShadowTools.js";
+import { addButtonFunction,addListner } from "./js_files/shadowListners.js";
 
 // where the output should be displayed
 const place = document.getElementById('display');
@@ -125,14 +127,24 @@ export const create_subdivs = (heading,arr) =>
 // calling functions
 
 const flexContent = flex_properties();
-const toolsContent = optionCreation();
+const toolsBorderContent = optionCreation();
 const gridContent = grid_properties();
+const toolsShadowContent = createShadowTools();
 
-const navTools = document.getElementById('nav-tools-border');
-navTools.addEventListener('click',() => {
+
+const navBorder = document.getElementById('nav-tools-border');
+navBorder.addEventListener('click',() => {
     place.innerHTML = '';
-    place.innerHTML = toolsContent;
+    place.innerHTML = toolsBorderContent;
     setListeners();
+});
+
+const navShadow = document.getElementById('nav-tools-shadow');
+navShadow.addEventListener('click',() => {
+    place.innerHTML = '';
+    place.innerHTML = toolsShadowContent;
+    addListner();
+    addButtonFunction();
 });
 
 const navLayouts = document.getElementById('nav-flex');
@@ -163,3 +175,4 @@ layouts.addEventListener('click', () => {
     toolsOptions.toggleAttribute("hidden");
     
 });
+

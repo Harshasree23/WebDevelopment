@@ -24,7 +24,7 @@ main{
     background-color: rgba(255, 255, 255, 0.911);
     box-shadow: 1rem 1rem 1rem rgba(177, 176, 176, 0.705)
                 ,0rem 0rem .33rem rgba(177, 176, 176, 0.705);
-    padding: 3rem 1rem 3rem 1rem;
+    padding: 6rem 2rem 6rem 1rem;
     width: 90%;
     margin: 2rem auto;
     margin-bottom: 1.5rem;
@@ -35,7 +35,8 @@ main{
 .main-container{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
+    min-height: 15rem;
     background-color: rgb(255, 255, 255);
 }
 
