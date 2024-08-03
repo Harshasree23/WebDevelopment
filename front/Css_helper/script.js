@@ -146,3 +146,20 @@ navGrid.addEventListener( 'click' , ()=>{
     place.innerHTML = '';
     display_containers(gridContent.heading,gridContent.divs);
 } );
+
+
+// nav opening
+
+const tools = document.getElementById('tools');
+tools.addEventListener('click', () => {
+    const toolsOptions = document.getElementById('nav-tools-options');
+    toolsOptions.toggleAttribute("hidden");
+    
+});
+
+const layouts = document.getElementById('layouts');
+layouts.addEventListener('click', () => {
+    const toolsOptions = document.getElementById('nav-layout-options');
+    toolsOptions.toggleAttribute("hidden");
+    
+});

@@ -33,7 +33,6 @@ const app = express();
 app.use( express.urlencoded({ extended:false }) );
 
 app.post('/', async (req, res) => {
-
   const user = new User({ 
     first_name : req.body.first_name,
     last_name : req.body.last_name,

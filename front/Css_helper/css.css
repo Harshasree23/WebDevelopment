@@ -45,6 +45,7 @@ nav ul li:hover {
 
 #layouts,#tools{
     position: relative;
+    cursor: pointer;
 }
 
 #nav-layout-options, #nav-tools-options{
@@ -52,11 +53,10 @@ nav ul li:hover {
     position: absolute;
     top: 2.45rem;
     padding: 1rem;
-    display:none;
 }
 
-#layouts:hover #nav-layout-options , #tools:hover #nav-tools-options{
-    display: block;
+.hidden{
+    display: none;
 }
 
 #nav-layout-options ul{
