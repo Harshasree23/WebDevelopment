@@ -24,10 +24,10 @@ main{
     background-color: rgba(255, 255, 255, 0.911);
     box-shadow: 1rem 1rem 1rem rgba(177, 176, 176, 0.705)
                 ,0rem 0rem .33rem rgba(177, 176, 176, 0.705);
-    padding: 6rem 2rem 6rem 1rem;
+    padding: 3rem 1rem 3rem 1rem;
     width: 90%;
-    margin: 2rem auto;
-    margin-bottom: 1.5rem;
+    margin: 1rem auto;
+    margin-bottom: .5rem;
     min-height: 20rem;
     grid-template-columns: 55% 45%;
 }
@@ -36,7 +36,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center; 
-    min-height: 15rem;
+    min-height: 10vh;
     background-color: rgb(255, 255, 255);
 }
 
@@ -60,6 +60,11 @@ main{
 .options{
     width: 90%;
     margin: 0rem auto;
+    margin-bottom: 2rem;
+}
+
+.options:last-child{
+    margin-bottom: 10rem;
 }
 
 .options h1{

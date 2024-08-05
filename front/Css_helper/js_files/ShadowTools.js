@@ -27,7 +27,7 @@ let text = `<div class="display">
             <tr>
                 <td> <input type="range" min="-3" max="3" value=".1" step=".001" class="progress-bar" > </td>
                 <td> <input type="range" min="-3" max="3" value=".1" step=".001" class="progress-bar"  > </td>
-                <td> <input type="range" min="-3" max="3" value=".1" step=".001" class="progress-bar" > </td>
+                <td> <input type="range" min="0" max="3" value=".1" step=".001" class="progress-bar" > </td>
                 <td> <input type="color"> </td>
             </tr>
         </table>

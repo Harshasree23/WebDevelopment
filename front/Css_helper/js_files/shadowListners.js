@@ -1,29 +1,31 @@
 //  function to apply shadow
-const applyShadow = () => 
-{
+const applyShadow = () => {
   const shadowDiv = document.getElementById('Shadowtest');
   const shadowTable = document.getElementById('ShadowTable');
-  let inputStyle = '';
+  let shadowValues = [];
 
   for (let x of shadowTable.rows) {
     const tds = x.getElementsByTagName('td');
-    let text = '';
+    let shadow = '';
     for (let y of tds) {
       const childValue = y.children[0].value;
-      if (Number.isFinite(parseFloat(childValue))) 
-        text += childValue+"rem";
-      else
-        text += childValue;
-      text += " ";
+      if (Number.isFinite(parseFloat(childValue))) {
+        shadow += childValue + "rem";
+      } else {
+        shadow += childValue;
+      }
+      shadow += " ";
     }
-    inputStyle += text + ",";
+    shadowValues.push(shadow.trim()); // Remove trailing space
   }
 
-  let style = inputStyle.slice(1, -1);
-  shadowDiv.style.boxShadow = style;
-  style+='\n';
-  updateCode(style);
+  let shadowStyle = shadowValues.join(",");
+  shadowStyle = shadowStyle.slice(1,);
+  console.log(shadowStyle); // Log for debugging (optional)
+  shadowDiv.style.boxShadow = shadowStyle;
+  updateCode(shadowStyle); // Update code display if needed
 };
+
 
 
 // function to update code
@@ -83,7 +85,6 @@ export const addButtonFunction = () => {
     shadowTable.appendChild(newRow);
     addListner();
   });
-  updateCode(".1rem .1rem .1rem #000000");
 }
 
 
