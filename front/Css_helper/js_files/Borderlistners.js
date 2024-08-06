@@ -1,4 +1,4 @@
-import { handleBorder,handleInputText,handleRadius,updatecode } from "./handlers.js";
+import { handleBorder,handleInputText,handleRadius,updatecode } from "./Borderhandlers.js";
 
 
 
