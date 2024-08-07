@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EJS</title>
+</head>
+<body>
+    <h1> Url shortner </h1>
+    <% if (locals.id )  { %>
+        <p>URL generated : http://localhost:8001/url/<%= locals.id %></p>
+    <% } %>
+     
+    <div>
+        <form method="post" action="/url">
+            <label for="inp" > Enter the URL </label>
+            <input type="text" id="inp" name="url" >
+            <button type="submit"> Generate </button>
+        </form>
+    </div>
+    <table>
+        <tr>
+            <th>ShortURL id</th>
+            <th>Redirect URL</th>
+            <th>Clicks</th>
+        </tr>
+        <% url.forEach( url => { %>
+            <tr>
+                <td> <%= url.shortURL %> </td>
+                <td> <%= url.fullURL %> </td>
+                <td> <%= url.history.length %> </td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>

@@ -14,11 +14,23 @@ const codes = [
     `
 ];
 
-const css = [
-    `
+const common = `
+    .nav-bar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-    `,
-]
+    .nav-items{
+        padding: .5rem;
+    }
+`;
+
+const css = [
+`   
+
+`,
+];
 
 export const createNavBar = (heading,output) => 
 {

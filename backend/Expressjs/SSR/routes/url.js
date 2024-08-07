@@ -9,30 +9,46 @@ route.post('/',
     async (req,res)  => {
         const id = shortId.generate();
 
-        if( await URL.findOne({ "fullURL" :  `${req.body.url}` }) != null )
-            return res.json({
-                error : "no duplicate keys",
-        });
 
         const response = await URL.create({
             shortURL : id ,
             fullURL : req.body.url ,
             history : [],
         });
-        return res.status(201).json({
-            success : `created id -> ${id}`,
-        })
+
+        const url = await URL.find({});
+        res.render('details',{
+            id:id,
+            url:url,
+        });
     }
 );
 
 route.get('/:id', 
     async (req,res) => {
-        const response = await URL.findOne({ "shortURL" :  `${req.params.id}` });
-        console.log(response);
-        return res.json({
-            clicked : `${response.history.length}`,
-            history : `${response.history}`,
+        console.log(req.params);
+        const fullURL = await URL.findOne( { "shortURL" : `${req.params.id}` } );
+        if( fullURL == null )
+            return res.json({
+                error : "no such URL is present",
         });
+
+        await URL.findOneAndUpdate(
+            {
+                shortURL : req.params.id,
+            },
+            {
+                $push : {
+                history : {
+                    timestamps : Date.now()
+                    },
+                },
+            }
+        );
+
+        return res.json({
+            success : `required URL -> ${fullURL.fullURL}`,
+        })
     }
 );
 
