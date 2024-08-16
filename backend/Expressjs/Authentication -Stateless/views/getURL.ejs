@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0rem;
+            margin: 0rem;
+            font-size: 1rem;
+            font-family: "Urbanist", sans-serif;
+        }
+
+        header{
+            min-height: 10vh;
+            padding: .2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            
+        }
+
+        .heading{
+            display: flex;
+            align-items: end;
+        }
+
+        .heading p{
+            font-size: 3.5rem;
+        }
+
+        .login button{
+            padding: .5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: .5rem;
+            box-shadow: none;
+        }
+
+        .login button:hover{
+            background-color: rgb(153, 255, 0);
+        }
+
+        main{
+            padding: 5rem;
+            width: fit-content;
+            margin: 2rem auto;
+            background-color: yellowgreen;
+        }
+
+        .main-container{
+            width: fit-content;
+            padding: 5rem 2rem;
+            border-radius: .5rem;
+            background-color: beige;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 1hhrem;
+        }
+
+        .main-container-desc{
+            font-size: 2rem;
+        }
+
+        form{
+            display: flex;
+            min-width: 50vw;
+            flex-direction: column;
+        }
+
+        .message{
+            font-size: 1rem;
+            margin: 0rem auto;
+            width: fit-content;
+            text-align:center;
+            color: red;
+        }
+
+        form label,form input,form button{
+            padding: 1rem;
+            margin: .2rem 0rem;
+            border: none;
+            border-radius: .5rem;
+            font-size: 1.5rem;
+            text-align: start;
+        }
+
+        form label{
+            padding-left: 0rem;
+        }
+
+        form input{
+            background-color: transparent;
+            border: .2rem solid;
+        }
+
+
+        form button{
+            width: fit-content;
+            margin-top: 4rem;
+        }
+
+        table{
+            margin: 0rem auto;
+            border-collapse: collapse;
+        }
+
+        td,th{
+            padding: .5rem;
+            text-align: center;
+        }
+
+        footer{
+            margin:2rem 0rem 5rem;
+            padding: 1rem;
+        }
+
+
+        @media (max-width:900px)
+        {
+            table tr{
+                display: flex;
+                flex-direction: column;
+                border: .1rem solid;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin: 1rem;
+            }
+            
+            .short{
+                display: none;
+            }
+
+
+        }
+    </style>
+    <title>Har-ly</title>
+</head>
+<body>
+    <header>
+        <div class="heading">
+            <p> Har-ly </p>
+            <sub> Create short URLs </sub>
+        </div>
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="generated">
+                <p> URL generated http://localhost:8001/<%= shortId %> </p>
+            </div>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr class="short">
+                    <th> Full URL </th>
+                    <th> Short URL </th>
+                    <th> Clicked </th>
+                </tr>
+                    <% urls.forEach( x => { %>
+                        <tr>
+                            <td> <%= x.FullUrl %> </td>
+                            <td> http://localhost:8001/<%= x.ShortID %> </td>
+                            <td> <%= x.history.length %> </td>
+                            <!-- <td> <%= x.history %> </td> -->
+                        </tr>
+                    <% }) %>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <p> Created by : M. Sree Harsha  </p>
+        <p> Contact at : sreeharshamunimadugu@gmail.com  </p>
+    </footer>
+</body>
+</html>

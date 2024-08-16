@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Log In</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0rem;
+            margin: 0rem;
+            font-size: 1rem;
+            font-family: "Urbanist", sans-serif;
+        }
+
+        .LogInContainer{
+            padding: 1rem 5rem;
+            margin: 4vh auto;
+            width: fit-content;
+            box-shadow: 1rem 1rem 3rem yellowgreen,
+                        0rem 0rem 1rem black;
+        }
+
+        .LogInContainer form{
+            background-color: beige;
+            width: fit-content;
+            padding: 3rem;
+            margin: 3rem auto;
+        }
+
+        .message{
+            text-align: center;
+            font-weight: bold;
+            font-size: 2rem;
+            color: yellowgreen;
+        }
+
+        .LogInContainer .desc{
+            font-size: 2rem;
+            padding: .5rem;
+            text-align: center;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+        }
+
+        form button{
+            border: .2rem solid yellowgreen;
+            border-radius: .3rem;
+            padding: .5rem;
+        }
+
+        form input{
+            border-radius: .3rem;
+            padding: .5rem;
+            min-width: 30vw;
+        }
+
+        button:hover{
+            background-color: yellowgreen;
+            font-weight: bold;
+            color: bisque;
+        }
+
+        a{
+            text-decoration: none;
+            font-style: inherit;
+            width: 100%;
+        }
+
+        .signUp{
+            margin: 1rem auto;
+            width: fit-content;
+        }
+
+        .signUp button{
+            border: .2rem solid yellowgreen;
+            border-radius: .3rem;
+            padding: .5rem;
+            background-color: beige;
+        }
+
+        .signUp button:hover{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="LogInContainer">
+        <p class="desc">Log In</p>
+        <p class="message">
+            <% if (locals.msg) { %>
+                <%= locals.msg  %>
+            <% } %>
+        </p>
+        <form method="post" action="/user/login" >
+            <label for="user-mail" > Email </label>
+            <input type="text" id="user-mail" name="email" required>
+            <label for="user-pass" > Password </label>
+            <input type="password" id="user-pass" name="password" required>
+            <button type="submit" > Log In </button>
+        </form>
+        <div class="signUp">
+            <p>Don't have an account ? <button> <a href="signUp">Sign UP</a> </button> </p>
+        </div>
+    </div>
+</body>
+</html>
