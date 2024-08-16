@@ -1,6 +1,7 @@
 const express = require('express');
 const { userModel } = require('../models/user');
 const { setUser } = require('../service/map');
+const { URLmodel } = require('../models/Url');
 
 const UserRouter = express.Router();
 
@@ -56,6 +57,17 @@ UserRouter.post('/login',
     }
 );
 
+
+UserRouter.get('/getURL',
+    async(req,res) => {
+        if (req.params.id != null || req.params.id !== ' ') {
+            const urls = await URLmodel.find({ createdBy : req.user._id });
+        return res.render('getURL',{ shortId : null, urls: urls});
+        }
+        else
+        return res.redirect(301,'/user/login',{msg : 'please login'});
+    }
+)
 
 module.exports = {
     UserRouter,

@@ -154,7 +154,6 @@
             <%}%>
             <button id="user-button">
                 <% if (locals.user) { %>
-                    <a href="/user/getURL"> check your URLs </a>
                 <% } else { %>
                    <a href="/user/signUp"> Login / Sign Up </a>
                 <% } %>
@@ -173,6 +172,9 @@
                     <% } %>
                 </p>
                 <button type="submit"> Generate </button>
+                <% if (locals.user) { %>
+                    <button> <a href="/user/getURL"> check your URLs </a> </button>
+                <% } %>
             </form>
         </div>
     </main>

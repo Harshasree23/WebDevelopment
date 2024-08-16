@@ -27,6 +27,7 @@ router.get('/:id',
         { ShortID: req.params.id },
         { $push: { history: { timestamp: Date.now() } } } // Update history
       );
+      if(redirectURL)
       return res.redirect( redirectURL.FullUrl );
   }
 )

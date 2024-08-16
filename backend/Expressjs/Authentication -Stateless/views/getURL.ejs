@@ -150,11 +150,13 @@
         </div>
     </header>
     <main>
+        <% if (shortId!=null) { %>
         <div class="main-container">
             <div class="generated">
                 <p> URL generated http://localhost:8001/<%= shortId %> </p>
             </div>
         </div>
+        <% } %>
         <div class="table-container">
             <table>
                 <tr class="short">
