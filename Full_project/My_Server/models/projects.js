@@ -1,35 +1,35 @@
 const mongoose = require('mongoose'); 
 
 // Declare the Schema of the Mongo model
-var badgeSchema = new mongoose.Schema({
-    badgeName:{
+var projectSchema = new mongoose.Schema({
+    projectName:{
         type:String,
         required:true,
         unique:true,
     },
-    badgeDescription:{
+    description:{
         type:String,
         required:true,
     },
-    badgeUrl:{
+    usedTechnologies:[{
+        techName:String,
+        description: String,
+    }],
+    link:{
         type:String,
         required:true,
     },
-    skills:[{
-        type:String,
-}],
-    verify:{
+    git:{
         type:String,
         required:true,
     },
-    company:{
+    video:{
         type:String,
-        required:true,
-    }
+    },
 });
 
-let badgeModel = mongoose.model('badges',badgeSchema);
+let projectModel = mongoose.model('badges',projectSchema);
 
 module.exports = {
-    badgeModel,
+    projectModel,
 }

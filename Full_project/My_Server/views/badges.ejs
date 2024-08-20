@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badges</title>
+</head>
+<body>
+    <div class="main-heading">
+        <div class="title"> Badges </div>
+        <button class="add">Add a badge</button>
+        <button class="update"> update current ones </button>
+    </div>
+    <form method="post" action="/api/badges" >
+
+        <label for="badgeName">Badge name</label>
+        <input type="text" name="badgeName" id="badgeName" placeholder="Enter Badge Name" required>
+
+        <label for="badgeDescription">Badge Description</label>
+        <input type="text" name="badgeDescription" id="badgeDescription" placeholder="About the badge" required>
+
+        <label for="badgeUrl">Badge Url</label>
+        <input type="text" name="badgeUrl" id="badgeUrl" placeholder="/badge/place/here" required>
+
+        <label for="skills">Skills ( enter with commas if many )</label>
+        <input type="text" name="skills" id="skills" placeholder="Enter, skills , got ,here" required>
+
+        <label for="verify">verify</label>
+        <input type="text" name="verify" id="verify" placeholder="verify link" required>
+
+        <label for="company">company</label>
+        <input type="text" name="company" id="company" placeholder="Enter company Name" required>
+
+
+        <div class="button-container">
+            <button type="submit"> Submit </button>
+            <button type="reset"> reset </button>
+        </div>
+    </form>
+</body>
+</html>
