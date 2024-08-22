@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <%- include('./partials/style') %>
+</head>
+<body>
+    <div class="main-heading">
+        <div class="title"> Contacts </div>
+        <button class="add">Add a contact</button>
+        <button class="update"> update current ones </button>
+    </div>
+    <form   id="mediaForm" action="/api/contacts" method="POST">
+
+        <label for="contactName"> contact name </label>
+        <input type="text" name="contactName" id="contactName" placeholder="Enter contact Name" required>
+
+        <label for="contactDescription"> contact Description </label>
+        <input type="text" name="contactDescription" id="contactDescription" placeholder="About the contact" required>
+        
+        <div id="media-container">
+            <button id="addMedia"> + </button>
+            <label for="mediaName"> Media Name </label>
+            <input type="text" name="mediaName" id="mediaName" placeholder="Enter media Name" required>
+
+            <label for="mediaLink"> Media Link </label>
+            <input type="text" name="mediaLink" id="mediaLink" placeholder="Enter media Link" required>
+        </div>
+        
+        <div class="button-container">
+            <button type="submit"> Submit </button>
+            <button type="reset"> reset </button>
+        </div>
+    </form>
+    <script> 
+        const mediaContainer = document.getElementById('media-container');
+        const addMediaButton = document.getElementById('addMedia');
+        const mediaForm = document.getElementById('mediaForm');
+
+        addMediaButton.addEventListener('click', () => {
+        const mediaGroup = document.createElement('div');
+        mediaGroup.className = 'media-group';
+
+        const mediaNameInput = document.createElement('input');
+        mediaNameInput.type = 'text';
+        mediaNameInput.name = 'mediaName[]'; // Use array notation for multiple inputs
+        mediaNameInput.placeholder = 'Enter media Name';
+        mediaNameInput.required = true;
+
+        const mediaLinkInput = document.createElement('input');
+        mediaLinkInput.type = 'text';
+        mediaLinkInput.name = 'mediaLink[]'; // Use array notation for multiple inputs
+        mediaLinkInput.placeholder = 'Enter media Link';
+        mediaLinkInput.required = true;
+
+        mediaGroup.appendChild(mediaNameInput);
+        mediaGroup.appendChild(mediaLinkInput);
+        mediaContainer.appendChild(mediaGroup);
+        });
+
+        mediaForm.addEventListener('submit', async (event) => {
+
+            const formData = new FormData(mediaForm);
+            const mediaData = {};
+
+            for (const [key, value] of formData.entries()) {
+            if (key.includes('[]')) {
+                const fieldName = key.replace('[]', '');
+                mediaData[fieldName].push(value);
+            } else {
+                mediaData[key] = mediaData[key] || []; 
+                mediaData[key].push(value);
+            }
+            }
+
+            fetch('/api/contacts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(mediaData)
+            })
+            .then(response => response.json())
+            .then(data => {
+            console.log('Form data submitted successfully:', data);
+            // Handle success, e.g., show a success message or redirect
+            // You can redirect using window.location.href = '/success-page'; 
+            })
+            .catch(error => {
+            console.error('Error submitting form data:', error);
+            // Handle errors, e.g., show an error message
+            });
+        });
+
+    </script>
+</body>
+</html>

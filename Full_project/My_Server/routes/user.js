@@ -3,6 +3,7 @@ const { handleGetBadge } = require('../controllers/badges');
 const { handleGetSkill } = require('../controllers/skills');
 const { handleGetproject } = require('../controllers/projects');
 const { handleGetcertificate } = require('../controllers/certifications');
+const { handleGetcontact } = require('../controllers/contacts');
 
 
 const userRoute = express.Router();
@@ -13,7 +14,7 @@ userRoute.get('/achievements' , (req,res) => { return res.json({ name:"skills" }
 .get('/skills' , handleGetSkill )
 .get('/certifications' , handleGetcertificate )
 .get('/projects' , handleGetproject )
-.get('/contacts' , (req,res) => { return res.json({ name:"contacts" }) } );
+.get('/contacts' , handleGetcontact );
 
 
 
