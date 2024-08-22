@@ -12,8 +12,7 @@ var projectSchema = new mongoose.Schema({
         required:true,
     },
     usedTechnologies:[{
-        techName:String,
-        description: String,
+        type:String,
     }],
     link:{
         type:String,
@@ -28,7 +27,7 @@ var projectSchema = new mongoose.Schema({
     },
 });
 
-let projectModel = mongoose.model('badges',projectSchema);
+let projectModel = mongoose.model('projects',projectSchema);
 
 module.exports = {
     projectModel,

@@ -16,7 +16,7 @@ var certificateSchema = new mongoose.Schema({
         required:true,
     },
     skills:[{
-        skill:String,
+        type:String,
     }],
     verify:{
         type: String,
@@ -28,7 +28,7 @@ var certificateSchema = new mongoose.Schema({
     },
 });
 
-let certificateModel = mongoose.model('badges',certificateSchema);
+let certificateModel = mongoose.model('certifications',certificateSchema);
 
 module.exports = {
     certificateModel,

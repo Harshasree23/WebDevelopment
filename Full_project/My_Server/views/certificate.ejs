@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificates</title>
+    <%- include('./partials/style') %>
+</head>
+<body>
+    <div class="main-heading">
+        <div class="title"> certificates </div>
+        <button class="add">Add a certificate</button>
+        <button class="update"> update current ones </button>
+    </div>
+    <form method="post" action="/api/certifications" >
+
+        <label for="certificateName"> Certificate name </label>
+        <input type="text" name="certificateName" id="certificateName" placeholder="Enter certificate Name" required>
+
+        <label for="certificateDescription"> Certificate Description </label>
+        <input type="text" name="certificateDescription" id="certificateDescription" placeholder="About the certificate" required>
+        
+        <label for="url"> Url </label>
+        <input type="text" name="url" id="url" placeholder="Enter url Name" required>
+        
+        <label for="skills"> Skills </label>
+        <input type="text" name="skills" id="skills" placeholder="/certificate/place/here" required>
+
+        <label for="verify"> verify </label>
+        <input type="text" name="verify" id="verify" placeholder="Enter, verify , got ,here" required>
+
+        <label for="company"> company </label>
+        <input type="text" name="company" id="company" placeholder="company skills" required>
+
+        <div class="button-container">
+            <button type="submit"> Submit </button>
+            <button type="reset"> reset </button>
+        </div>
+    </form>
+</body>
+</html>

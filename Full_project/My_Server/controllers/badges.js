@@ -17,26 +17,36 @@ const handleGetApiBadge = async (req,res) =>
 
 
 const handleGetBadge = async (req,res) => {
-    res.render('badges');
+    try{
+        return res.render('badges');
+    }
+    catch(err)
+    {
+        return res.json({ error:"Error in rendering home page" });
+    }
 }
 
 
 const handlePostApiBadge = async (req,res) => {
-    const { badgeName, badgeDescription, badgeUrl, skills, verify, company } = req.body;
-
-    skillsArray =  skills.split(',').map(skill => skill.trim()); // Split and trim skills
-  
-    console.log(skills , skillsArray);
-
-    const newBadge = await badgeModel.create({
-      badgeName,
-      badgeDescription,
-      badgeUrl,
-      skills: skillsArray,
-      verify,
-      company,
-    });
-    res.render('badges');
+    
+    // getting badge data from the form
+    try{
+        const { badgeName, badgeDescription, badgeUrl, skills, verify, company } = req.body;
+        skillsArray =  skills.split(',').map(skill => skill.trim()); // Split and trim skills
+        const newBadge = await badgeModel.create({
+        badgeName,
+        badgeDescription,
+        badgeUrl,
+        skills: skillsArray,
+        verify,
+        company,
+        });
+        return res.redirect('/api/badges');
+    }
+    catch(err){
+        return res.json({ error:"Error in storing badge data" });
+    }
+    
 }
 
 module.exports = {

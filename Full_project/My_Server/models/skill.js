@@ -12,20 +12,17 @@ var skillSchema = new mongoose.Schema({
         required:true,
     },
     learnedFrom:[{
-        company: String,
+        type: String,
     }],
-    Projects:[{
-        project:String,
-        description: String,
+    projects:[{
+        type:String,
     }],
     certificates:[{
-        name:String,
-        issuedBy:String,
-        dateObtained: Date,
-     }],
+        type:String,
+    }],
 });
 
-let skillModel = mongoose.model('badges',skillSchema);
+let skillModel = mongoose.model('skills',skillSchema);
 
 module.exports = {
     skillModel,
