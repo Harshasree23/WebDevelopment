@@ -8,11 +8,22 @@
 </head>
 <body>
     <div class="main-heading">
-        <div class="title"> Badges </div>
-        <button class="add">Add a badge</button>
-        <button class="update"> update current ones </button>
+        <div class="hover" id="title"> Badges </div>
+        <button class="hover" id="add">Add a badge</button>
+        <!-- <button class="hover" id="update"> update current ones </button> -->
     </div>
-    <form method="post" action="/api/badges" >
+    <div id="container">
+        <div class="goto">
+            <a href="/api/badges">Click here to see response of API
+                <span class="material-symbols-outlined">
+                    open_in_new
+                </span>
+            </a>
+            <p>API is :-------------------------</p>
+        </div>
+    </div>
+    <script>
+        const text = `<form method="post" action="/api/badges" >
 
         <label for="badgeName">Badge name</label>
         <input type="text" name="badgeName" id="badgeName" placeholder="Enter Badge Name" required>
@@ -21,21 +32,27 @@
         <input type="text" name="badgeDescription" id="badgeDescription" placeholder="About the badge" required>
 
         <label for="badgeUrl">Badge Url</label>
-        <input type="text" name="badgeUrl" id="badgeUrl" placeholder="/badge/place/here" required>
+        <input type="text" name="badgeUrl" id="badgeUrl" placeholder="" required>
 
         <label for="skills">Skills ( enter with commas if many )</label>
-        <input type="text" name="skills" id="skills" placeholder="Enter, skills , got ,here" required>
+        <input type="text" name="skills" id="skills" placeholder="java, c ..." required>
 
-        <label for="verify">verify</label>
-        <input type="text" name="verify" id="verify" placeholder="verify link" required>
+        <label for="verify">Verify</label>
+        <input type="text" name="verify" id="verify" placeholder="Verification link" required>
 
-        <label for="company">company</label>
+        <label for="company">Company</label>
         <input type="text" name="company" id="company" placeholder="Enter company Name" required>
+
+         <label for='password'>Password ( changes will reflect only if password is correct )</label>
+        <input type='password' name='password' id='password' required>
 
         <div class="button-container">
             <button type="submit"> Submit </button>
-            <button type="reset"> reset </button>
+            <button type="reset"> Reset </button>
         </div>
-    </form>
+    </form>`;
+        
+    </script>
+    <%- include('./partials/sameScript.ejs') %>
 </body>
 </html>

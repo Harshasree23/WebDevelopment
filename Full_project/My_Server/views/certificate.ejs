@@ -8,11 +8,23 @@
 </head>
 <body>
     <div class="main-heading">
-        <div class="title"> certificates </div>
-        <button class="add">Add a certificate</button>
-        <button class="update"> update current ones </button>
+        <div class="hover" id="title"> Certifications </div>
+        <button class="hover" id="add">Add a certification</button>
+        <!-- <button class="hover" id="update"> update current ones </button> -->
     </div>
-    <form method="post" action="/api/certifications" >
+    <div id="container">
+        <div class="goto">
+            <a href="/api/certifications">Click here to see response of API
+                <span class="material-symbols-outlined">
+                    open_in_new
+                </span>
+            </a>
+            <p>API is :-------------------------</p>
+        </div>
+    </div>
+    
+    <script>
+        const text = `<form method="post" action="/api/certifications" >
 
         <label for="certificateName"> Certificate name </label>
         <input type="text" name="certificateName" id="certificateName" placeholder="Enter certificate Name" required>
@@ -21,21 +33,27 @@
         <input type="text" name="certificateDescription" id="certificateDescription" placeholder="About the certificate" required>
         
         <label for="url"> Url </label>
-        <input type="text" name="url" id="url" placeholder="Enter url Name" required>
+        <input type="text" name="url" id="url" placeholder="Enter url" required>
         
         <label for="skills"> Skills </label>
-        <input type="text" name="skills" id="skills" placeholder="/certificate/place/here" required>
+        <input type="text" name="skills" id="skills" placeholder="java, c, .." required>
 
-        <label for="verify"> verify </label>
-        <input type="text" name="verify" id="verify" placeholder="Enter, verify , got ,here" required>
+        <label for="verify"> Verify </label>
+        <input type="text" name="verify" id="verify" placeholder="Verification link" required>
 
-        <label for="company"> company </label>
-        <input type="text" name="company" id="company" placeholder="company skills" required>
+        <label for="company"> Company </label>
+        <input type="text" name="company" id="company" placeholder="Company name" required>
 
+         <label for='password'> Password ( changes will reflect only if password is correct )</label>
+            <input type='password' name='password' id='password' required>
+            
         <div class="button-container">
             <button type="submit"> Submit </button>
-            <button type="reset"> reset </button>
+            <button type="reset"> Reset </button>
         </div>
-    </form>
+    </form>`;
+        
+    </script>
+    <%- include('./partials/sameScript.ejs') %>
 </body>
 </html>

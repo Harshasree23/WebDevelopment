@@ -8,16 +8,25 @@
 </head>
 <body>
     <div class="main-heading">
-        <div class="title"> Contacts </div>
-        <button class="add">Add a contact</button>
-        <button class="update"> update current ones </button>
+        <div class="hover" id="title"> Contact Info </div>
+        <button class="hover" id="add">Add a Contact Info</button>
+        <!-- <button class="hover" id="update"> update current ones </button> -->
     </div>
-    <form   id="mediaForm" action="/api/contacts" method="POST">
+    <div id="container">
+        <div class="goto">
+            <a href="/api/contacts">Click here to see response of API</a>
+            <p>API is :-------------------------</p>
+        </div>
+    </div>
+    
+    <script> 
 
-        <label for="contactName"> contact name </label>
+        const text=`<form   id="mediaForm" action="/api/contacts" method="POST">
+
+        <label for="contactName"> Contact name </label>
         <input type="text" name="contactName" id="contactName" placeholder="Enter contact Name" required>
 
-        <label for="contactDescription"> contact Description </label>
+        <label for="contactDescription"> Contact Description </label>
         <input type="text" name="contactDescription" id="contactDescription" placeholder="About the contact" required>
         
         <div id="media-container">
@@ -29,12 +38,15 @@
             <input type="text" name="mediaLink" id="mediaLink" placeholder="Enter media Link" required>
         </div>
         
+         <label for='password'> Password ( changes will reflect only if password is correct )</label>
+            <input type='password' name='password' id='password' required>
+
         <div class="button-container">
             <button type="submit"> Submit </button>
-            <button type="reset"> reset </button>
+            <button type="reset"> Reset </button>
         </div>
-    </form>
-    <script> 
+    </form>`;
+
         const mediaContainer = document.getElementById('media-container');
         const addMediaButton = document.getElementById('addMedia');
         const mediaForm = document.getElementById('mediaForm');
@@ -95,5 +107,6 @@
         });
 
     </script>
+     <%- include('./partials/sameScript.ejs') %>
 </body>
 </html>

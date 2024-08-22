@@ -8,36 +8,52 @@
 </head>
 <body>
     <div class="main-heading">
-        <div class="title"> projects </div>
-        <button class="add">Add a project</button>
-        <button class="update"> update current ones </button>
+        <div class="hover" id="title"> Projects </div>
+        <button class="hover" id="add">Add a project</button>
+        <!-- <button class="hover" id="update"> update current ones </button> -->
     </div>
-    <form method="post" action="/api/projects" >
+    <div id="container">
+        <div class="goto">
+            <a href="/api/projects">Click here to see response of API
+                <span class="material-symbols-outlined">
+                    open_in_new
+                </span>
+            </a>
+            <p>API is :-------------------------</p>
+        </div>
+    </div>
 
-        <label for="projectName">project name</label>
+    <script>
+        const text = ` <form method="post" action="/api/projects" >
+
+        <label for="projectName">Project name</label>
         <input type="text" name="projectName" id="projectName" placeholder="Enter project Name" required>
 
-        <label for="projectDescription">project Description</label>
+        <label for="projectDescription">Project Description</label>
         <input type="text" name="projectDescription" id="projectDescription" placeholder="About the project" required>
         
         <label for="usedTechnologies">Used technologies ( seperate by ',' if many) </label>
-        <input type="text" name="usedTechnologies" id="usedTechnologies" placeholder="Enter usedTechnologies Name" required>
+        <input type="text" name="usedTechnologies" id="usedTechnologies" placeholder="NodeJs , MongoDB , .." required>
         
-        <label for="link">project Url</label>
-        <input type="text" name="link" id="link" placeholder="/project/place/here" required>
+        <label for="link">Project Url</label>
+        <input type="text" name="link" id="link" placeholder="" required>
 
-        <label for="git">git</label>
-        <input type="text" name="git" id="git" placeholder="Enter, git , got ,here" required>
+        <label for="git">Git</label>
+        <input type="text" name="git" id="git" placeholder="git link" required>
 
-        <label for="video">video</label>
+        <label for="video">Video</label>
         <input type="text" name="video" id="video" placeholder="video link" required>
 
-        
+         <label for='password'>Password ( changes will reflect only if password is correct )</label>
+            <input type='password' name='password' id='password' required>
 
         <div class="button-container">
             <button type="submit"> Submit </button>
-            <button type="reset"> reset </button>
+            <button type="reset"> Reset </button>
         </div>
-    </form>
+    </form>`;
+        
+    </script>
+    <%- include('./partials/sameScript.ejs') %>
 </body>
 </html>
