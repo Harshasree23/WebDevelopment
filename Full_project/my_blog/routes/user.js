@@ -27,9 +27,14 @@ userRoute.get("/signin",
 userRoute.post('/signin',
     async (req,res) => {
         const { email,password } = req.body;
-        const matched = await userModel.matchPassword( email , password );
-        if(matched)
-            return res.redirect('/user');
+        try{
+            const token = await userModel.matchPasswordAndGetToken( email , password );
+            return res.cookie('token',token).redirect('/user');
+        }
+        catch(err)
+        {
+            res.render('signin',{ error : 'Incorrect email or password' });
+        }
     }
 );
 
