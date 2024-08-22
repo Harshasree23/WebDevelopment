@@ -4,17 +4,19 @@ const { handleGetSkill } = require('../controllers/skills');
 const { handleGetproject } = require('../controllers/projects');
 const { handleGetcertificate } = require('../controllers/certifications');
 const { handleGetcontact } = require('../controllers/contacts');
+const { handleGetachievement } = require('../controllers/achievements');
 
 
 const userRoute = express.Router();
 
 
-userRoute.get('/achievements' , (req,res) => { return res.json({ name:"skills" }) }  )
-.get('/badges' , handleGetBadge )
-.get('/skills' , handleGetSkill )
-.get('/certifications' , handleGetcertificate )
-.get('/projects' , handleGetproject )
-.get('/contacts' , handleGetcontact );
+userRoute.get('/',(req,res) => {return res.render('home');})
+        .get('/achievements' , handleGetachievement  )
+        .get('/badges' , handleGetBadge )
+        .get('/skills' , handleGetSkill )
+        .get('/certifications' , handleGetcertificate )
+        .get('/projects' , handleGetproject )
+        .get('/contacts' , handleGetcontact );
 
 
 

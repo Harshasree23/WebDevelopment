@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Matemasie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>H-api</title>
+    <style>
+        *{
+            box-sizing: content-box;
+            margin: 0rem;
+            padding: 0rem;
+            font-family: "Urbanist", sans-serif;
+        }
+        .heading{
+            font-size: 3rem;
+            padding: 1rem;
+            font-family: "Matemasie", sans-serif;
+            color: yellowgreen;
+            background-color: bisque;
+            border-radius: 0rem 0rem 1.5rem 1.5rem;
+        }
+        .sub{
+            font-size: 1.5rem;
+            padding: 1rem;
+            color: black;
+        }
+        .allLinks{
+            display: grid;
+            grid-template-columns:47% 47%;
+            width: fit-content;
+            margin: 1rem auto;
+            padding: 2rem;
+            gap: 2rem;
+        }
+        .linkContainer{
+            background-color: yellowgreen;
+            border-radius: .3rem;
+            padding: 1rem;
+            min-height: 10rem;
+            text-align: center;
+        }
+        .linkDescription{
+            width: fit-content;
+            margin: 2rem auto;
+        }
+        a{
+            font-size: 1rem;
+            display: block;
+            padding: 1rem;
+            color: black;
+            background-color: aliceblue;
+            border-radius: .3rem;
+            text-decoration: none;
+        }
+        a:hover{
+            background-color: rgb(217, 255, 0);
+        }
+        a:visited,a:focus,a:active{
+            text-decoration: none;
+        }
+        footer{
+            padding: 1rem;
+            min-height: 5vh;
+            background-color: yellowgreen;
+            border-radius: 1.5rem 1.5rem 0rem 0rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="heading">
+            H - API
+            <div class="sub">
+                H-API is a RESTfdiv API server providing comprehensive information about Harsha. This collection of self-developed APIs offers detailed insights into various aspects of my professional and personal background.
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="allLinks">
+            <div class="linkContainer">
+                 <a href="/user/achievements" > Achievements API </a> 
+                <div class="linkDescription">
+                   Know my achievements
+                </div>
+            </div>
+
+            <div class="linkContainer">
+                <a href="/user/badges" > Badges API </a> 
+                <div class="linkDescription">
+                    Check out my Badges
+                </div>
+            </div>
+
+            <div class="linkContainer">
+                <a href="/user/certifications" > Certifications API </a> 
+                <div class="linkDescription">
+                    Here are some of the certificates I've earned.
+                </div>
+            </div>
+
+            <div class="linkContainer">
+                <a href="/user/contacts" > Contact Info API </a> 
+                <div class="linkDescription">
+                    Want to contact me?
+                </div>
+            </div>
+
+            <div class="linkContainer">
+                 <a href="/user/projects" > Projects API </a> 
+                <div class="linkDescription">
+                    I invite you to explore my recent projects.
+                </div>
+                </div>
+
+            <div class="linkContainer">
+                 <a href="/user/skills" > Skills API </a> 
+                <div class="linkDescription">
+                    I am particularly skilled at ...
+                </div>
+                </div>
+        </div>
+    </main>
+    <footer>
+        <div class="developer">M . Sree Harsha</div>
+        <div class="mail"> Any suggestions ? Contact me @<email>marvelavengersharsha@gmail.com</email> </div>
+    </footer>
+</body>
+</html>

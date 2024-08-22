@@ -12,11 +12,11 @@ var achievementSchema = new mongoose.Schema({
         required:true,
     },
     skills:[{
-        skill: String,
+        type: String,
     }],
 });
 
-let achievementModel = mongoose.model('badges',achievementSchema);
+let achievementModel = mongoose.model('achievements',achievementSchema);
 
 module.exports = {
     achievementModel,

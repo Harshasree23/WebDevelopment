@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements</title>
+    <%- include('./partials/style') %>
+</head>
+<body>
+    <div class="main-heading">
+        <div class="title"> Achievements </div>
+        <button class="add">Add a achievement</button>
+        <button class="update"> update current ones </button>
+    </div>
+    <form method="post" action="/api/achievements" >
+
+        <label for="achievementName">achievement name</label>
+        <input type="text" name="achievementName" id="achievementName" placeholder="Enter achievement Name" required>
+
+        <label for="achievementDescription">achievement Description</label>
+        <input type="text" name="achievementDescription" id="achievementDescription" placeholder="About the achievement" required>
+
+        <label for="skills">Related skills ( if many seperate by , )</label>
+        <input type="text" name="skills" id="skills" placeholder="Microsoft" required>
+
+
+        <div class="button-container">
+            <button type="submit"> Submit </button>
+            <button type="reset"> reset </button>
+        </div>
+    </form>
+</body>
+</html>

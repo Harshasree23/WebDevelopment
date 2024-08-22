@@ -5,7 +5,7 @@ const { badgeModel } = require("../models/badges")
 const handleGetApiBadge = async (req,res) => 
 {
     try {
-        const badges = await badgeModel.find({});
+        const badges = await badgeModel.find({}, { _id: 0, __v: 0 });
         res.json(badges);
     }  
     catch (error) {

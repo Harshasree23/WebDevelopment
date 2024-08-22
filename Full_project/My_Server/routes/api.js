@@ -4,17 +4,19 @@ const { handleGetApiSkill, handlePostApiSkill } = require('../controllers/skills
 const { handleGetApiproject, handlePostApiproject } = require('../controllers/projects');
 const { handleGetApicertificate, handlePostApicertificate } = require('../controllers/certifications');
 const { handleGetApicontact, handlePostApicontact } = require('../controllers/contacts');
+const { handleGetApiachievement, handlePostApiachievement } = require('../controllers/achievements');
 
 
 const apiRoute = express.Router();
 
 
-apiRoute.get('/achievements' , (req,res) => { return res.json({ name:"skills" }) }  )
+apiRoute.get('/achievements' , handleGetApiachievement  )
         .get('/badges' , handleGetApiBadge )
         .get('/skills' , handleGetApiSkill )
         .get('/certifications' , handleGetApicertificate )
         .get('/projects' , handleGetApiproject )
         .get('/contacts' , handleGetApicontact )
+        .post('/achievements', handlePostApiachievement)
         .post('/contacts', handlePostApicontact )
         .post('/certifications', handlePostApicertificate)
         .post('/badges' , handlePostApiBadge)

@@ -5,7 +5,7 @@ const { contactModel } = require("../models/contact")
 const handleGetApicontact = async (req,res) => 
 {
     try {
-        const contacts = await contactModel.find({});
+        const contacts = await contactModel.find({}, { _id: 0, __v: 0 });
         res.json(contacts);
     }  
     catch (error) {

@@ -5,7 +5,7 @@ const { projectModel } = require("../models/projects.js")
 const handleGetApiproject = async (req,res) => 
 {
     try {
-        const projects = await projectModel.find({});
+        const projects = await projectModel.find({}, { _id: 0, __v: 0 });
         res.json(projects);
     }  
     catch (error) {
