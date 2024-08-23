@@ -14,8 +14,12 @@
     </div>
     <div id="container">
         <div class="goto">
-            <a href="/api/contacts">Click here to see response of API</a>
-            <p>API is :-------------------------</p>
+            <a href="/api/contacts">Click here to see response of API
+                <span class="material-symbols-outlined">
+                    open_in_new
+                </span>
+            </a>
+            <p id="APILink"></p>
         </div>
     </div>
     
@@ -125,7 +129,10 @@
         const add = document.getElementById('add');
         const title = document.getElementById('title');
 
-
+        let url = window.location.href;
+        url = url.replace('user','api');
+        const APILink = document.getElementById('APILink');
+        APILink.innerText = `For API use ${url}`;
         const preText = container.innerHTML;
 
         add.addEventListener('click', async () => {
@@ -138,6 +145,10 @@
         title.addEventListener('click', () =>{
             container.innerHTML='';
             container.innerHTML=preText;
+            let url = window.location.href;
+            url = url.replace('user','api');
+            const APILink = document.getElementById('APILink');
+            APILink.innerText = `For API use ${url}`;
         });
         
     </script>
