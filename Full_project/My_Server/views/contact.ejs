@@ -30,7 +30,7 @@
         <input type="text" name="contactDescription" id="contactDescription" placeholder="About the contact" required>
         
         <div id="media-container">
-            <button id="addMedia"> + </button>
+            <button id="addMedia"> Add </button>
             <label for="mediaName"> Media Name </label>
             <input type="text" name="mediaName" id="mediaName" placeholder="Enter media Name" required>
 
@@ -47,52 +47,66 @@
         </div>
     </form>`;
 
-        const mediaContainer = document.getElementById('media-container');
-        const addMediaButton = document.getElementById('addMedia');
-        const mediaForm = document.getElementById('mediaForm');
+        
 
-        addMediaButton.addEventListener('click', () => {
-        const mediaGroup = document.createElement('div');
-        mediaGroup.className = 'media-group';
 
-        const mediaNameInput = document.createElement('input');
-        mediaNameInput.type = 'text';
-        mediaNameInput.name = 'mediaName[]'; // Use array notation for multiple inputs
-        mediaNameInput.placeholder = 'Enter media Name';
-        mediaNameInput.required = true;
+        function setEventForAdd()
+        {
+            const mediaContainer = document.getElementById('media-container');
+            const addMediaButton = document.getElementById('addMedia');
+            const mediaForm = document.getElementById('mediaForm');
 
-        const mediaLinkInput = document.createElement('input');
-        mediaLinkInput.type = 'text';
-        mediaLinkInput.name = 'mediaLink[]'; // Use array notation for multiple inputs
-        mediaLinkInput.placeholder = 'Enter media Link';
-        mediaLinkInput.required = true;
+            addMediaButton.addEventListener('click', () => {
+            const mediaGroup = document.createElement('div');
+            mediaGroup.className = 'media-group';
 
-        mediaGroup.appendChild(mediaNameInput);
-        mediaGroup.appendChild(mediaLinkInput);
-        mediaContainer.appendChild(mediaGroup);
-        });
+            const mediaNameInput = document.createElement('input');
+            mediaNameInput.type = 'text';
+            mediaNameInput.name = 'mediaName'; // Use array notation for multiple inputs
+            mediaNameInput.placeholder = 'Enter media Name';
+            mediaNameInput.required = true;
 
-        mediaForm.addEventListener('submit', async (event) => {
+            const mediaLinkInput = document.createElement('input');
+            mediaLinkInput.type = 'text';
+            mediaLinkInput.name = 'mediaLink'; // Use array notation for multiple inputs
+            mediaLinkInput.placeholder = 'Enter media Link';
+            mediaLinkInput.required = true;
 
+            mediaGroup.appendChild(mediaNameInput);
+            mediaGroup.appendChild(mediaLinkInput);
+            mediaContainer.appendChild(mediaGroup);
+            });
+        }
+
+        function setEventForSubmit()
+        {
+            const mediaContainer = document.getElementById('media-container');
+            const addMediaButton = document.getElementById('addMedia');
+            const mediaForm = document.getElementById('mediaForm');
+
+
+            mediaForm.addEventListener('submit', async (event) => {
             const formData = new FormData(mediaForm);
             const mediaData = {};
 
             for (const [key, value] of formData.entries()) {
-            if (key.includes('[]')) {
-                const fieldName = key.replace('[]', '');
-                mediaData[fieldName].push(value);
-            } else {
-                mediaData[key] = mediaData[key] || []; 
-                mediaData[key].push(value);
-            }
+                if (key.includes('[]')) {
+                    const fieldName = key.replace('[]', '');
+                    mediaData[fieldName].push(value);
+                } else {
+                    mediaData[key] = mediaData[key] || []; 
+                    mediaData[key].push(value);
+                }
             }
 
+            console.log(mediaData);
+
             fetch('/api/contacts', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(mediaData)
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(mediaData)
             })
             .then(response => response.json())
             .then(data => {
@@ -104,9 +118,28 @@
             console.error('Error submitting form data:', error);
             // Handle errors, e.g., show an error message
             });
+            });
+        }
+
+        const container = document.getElementById('container');
+        const add = document.getElementById('add');
+        const title = document.getElementById('title');
+
+
+        const preText = container.innerHTML;
+
+        add.addEventListener('click', async () => {
+            container.innerHTML='';
+            container.innerHTML = text;
+            await setEventForAdd();
+            await setEventForSubmit();
         });
 
+        title.addEventListener('click', () =>{
+            container.innerHTML='';
+            container.innerHTML=preText;
+        });
+        
     </script>
-     <%- include('./partials/sameScript.ejs') %>
 </body>
 </html>

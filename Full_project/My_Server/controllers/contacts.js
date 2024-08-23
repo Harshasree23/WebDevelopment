@@ -1,5 +1,5 @@
 const { contactModel } = require("../models/contact")
-
+const { password } = require('../config.json');
 
 
 const handleGetApicontact = async (req,res) => 
@@ -33,9 +33,10 @@ const handlePostApicontact = async (req,res) => {
      try{
         const mediaData = req.body;
         // console.log(mediaData);
-        const contactName = mediaData.contactName[0];
-        const desc = mediaData.contactDescription[0];
+        const contactName = mediaData.contactName;
+        const desc = mediaData.contactDescription;
         
+
         let media = [];
         for(let i=0 ; i< mediaData.mediaName.length ; i++)
         {
@@ -46,13 +47,17 @@ const handlePostApicontact = async (req,res) => {
             media.push(temp);
         }
        
-        // console.log(contactName, "\n" , desc , "\n" , media);
+        console.log(mediaData.mediaName , "\n" , mediaData.mediaLink);
 
-        await contactModel.create({
+        if( req.body.password === password )
+        {
+            await contactModel.create({
             name: contactName,
             description : desc,
             contacts: media,
-        });
+            });
+        }
+        
 
         return res.redirect('/api/contacts');
         

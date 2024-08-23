@@ -1,5 +1,5 @@
 const { projectModel } = require("../models/projects.js")
-
+const { password } = require('../config.json');
 
 
 const handleGetApiproject = async (req,res) => 
@@ -34,15 +34,18 @@ const handlePostApiproject = async (req,res) => {
         const { projectName, projectDescription, usedTechnologies, link ,git ,video } = req.body;
         const techArray =  usedTechnologies.split(',').map(project => project.trim()); 
        
-
-        const newproject = await projectModel.create({
-        projectName,
-        description: projectDescription,
-        usedTechnologies: techArray,
-        link,
-        git,
-        video,
-        });
+        if( req.body.password === password )
+        {
+            const newproject = await projectModel.create({
+            projectName,
+            description: projectDescription,
+            usedTechnologies: techArray,
+            link,
+            git,
+            video,
+            });
+        }
+        
         return res.redirect('/api/projects');
     }
     catch(err){

@@ -1,5 +1,5 @@
 const { certificateModel } = require("../models/certifications.js")
-
+const { password } = require('../config.json');
 
 const handleGetApicertificate = async (req,res) => 
 {
@@ -32,15 +32,18 @@ const handlePostApicertificate = async (req,res) => {
         const { certificateName, certificateDescription, url, skills , verify , company } = req.body;
         const skillsArray =  skills.split(',').map(certificate => certificate.trim()); 
        
-
-        const newcertificate = await certificateModel.create({
-        certificateName,
-        description: certificateDescription,
-        url,
-        skills : skillsArray,
-        verify,
-        company,
-        });
+        if( req.body.password === password )
+        {
+            const newcertificate = await certificateModel.create({
+            certificateName,
+            description: certificateDescription,
+            url,
+            skills : skillsArray,
+            verify,
+            company,
+            });
+        }
+        
         return res.redirect('/api/certifications');
     }
     catch(err){

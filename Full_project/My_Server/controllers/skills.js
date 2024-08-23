@@ -1,5 +1,5 @@
 const { skillModel } = require("../models/skill.js")
-
+const { password } = require('../config.json');
 
 
 const handleGetApiSkill = async (req,res) => 
@@ -36,14 +36,17 @@ const handlePostApiSkill = async (req,res) => {
         const projectsArray =  projects.split(',').map(skill => skill.trim()); 
         const certificationsArray =  certifications.split(',').map(skill => skill.trim()); 
        
-
-        const newSkill = await skillModel.create({
-        skillName:SkillName,
-        description:SkillDescription,
-        learnedFrom:learnedFromArray,
-        projects:projectsArray,
-        certificates:certificationsArray,
-        });
+        if( req.body.password === password )
+        {
+            const newSkill = await skillModel.create({
+            skillName:SkillName,
+            description:SkillDescription,
+            learnedFrom:learnedFromArray,
+            projects:projectsArray,
+            certificates:certificationsArray,
+            });
+        }
+        
         return res.redirect('/api/skills');
     }
     catch(err){
