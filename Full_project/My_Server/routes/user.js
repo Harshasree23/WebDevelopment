@@ -16,7 +16,11 @@ userRoute.get('/',(req,res) => {return res.render('home');})
         .get('/skills' , handleGetSkill )
         .get('/certifications' , handleGetcertificate )
         .get('/projects' , handleGetproject )
-        .get('/contacts' , handleGetcontact );
+        .get('/contacts' , handleGetcontact )
+        .use((req, res, next) => {
+            // Handle route not found
+            res.status(404).json({ error: 'Route not found' });
+          });
 
 
 
