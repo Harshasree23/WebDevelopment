@@ -19,7 +19,7 @@
                     open_in_new
                 </span>
             </a>
-            <p>API is :-------------------------</p>
+            <p id="APILink" ></p>
         </div>
     </div>
     <script>
@@ -43,6 +43,11 @@
             </div>
         </form>`;
         
+        let url = window.location.href;
+        url = url.replace('user','api');
+        const APILink = document.getElementById('APILink');
+        APILink.innerText = `For API use ${url}`;
+
     </script>
     <%- include('./partials/sameScript.ejs') %>
 </body>

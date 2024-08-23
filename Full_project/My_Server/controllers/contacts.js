@@ -47,7 +47,7 @@ const handlePostApicontact = async (req,res) => {
             media.push(temp);
         }
        
-        console.log(mediaData.mediaName , "\n" , mediaData.mediaLink);
+        // console.log(mediaData.mediaName , "\n" , mediaData.mediaLink);
 
         if( req.body.password === password )
         {
